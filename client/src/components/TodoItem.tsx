@@ -14,7 +14,7 @@ const TodoItem = ({ todo }: { todo: Todo }) => {
 			if (todo.completed) return alert("Todo is already completed");
 			try {
 				const res = await fetch(BASE_URL + `/todos/${todo._id}`, {
-					method: "PATCH",
+					method: "PUT",
 				});
 				const data = await res.json();
 				if (!res.ok) {
